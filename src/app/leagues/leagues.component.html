@@ -6,32 +6,31 @@
 </mat-tab-group>
 
 @if (teams.length > 0) {
-<div>
-    <table class="teams-table mat-elevation-z8">
-        <thead>
-            <tr>
-                <th>Logo</th>
-                <th>Team Name</th>
-                <th>Stadium</th>
-                <th>Location</th>
-                <th>Website</th>
-            </tr>
-        </thead>
-        <tbody>
-            @for (team of teams; track teams) {
-            <tr>
-                <td><img [src]="team.strLogo" alt="{{ team.strTeam }}" class="team-logo"></td>
-                <td>{{ team.strTeam }}</td>
-                <td>{{ team.strStadium }}</td>
-                <td>{{ team.strLocation }}</td>
-                <td>{{ team.strWebsite }}</td>
-               
-            </tr>
-            }
-        </tbody>
-    </table>
-</div>
-
+    <div>
+        <table class="teams-table mat-elevation-z8">
+            <thead>
+                <tr>
+                    <th>Logo</th>
+                    <th>Team Name</th>
+                    <th>Stadium</th>
+                    <th>Location</th>
+                    <th>Website</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (team of teams; track teams) {
+                <tr>
+                    <td><img [src]="team.strLogo" alt="{{ team.strTeam }}" class="team-logo"></td>
+                    <td>{{ team.strTeam }}</td>
+                    <td>{{ team.strStadium }}</td>
+                    <td>{{ team.strLocation }}</td>
+                    <td>{{ team.strWebsite }}</td>
+                
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 } 
 @else {
     <h2 class="no-teams-message">Click on A League</h2>
