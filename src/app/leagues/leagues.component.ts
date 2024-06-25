@@ -23,6 +23,10 @@ export class LeaguesComponent {
 
   constructor(private http: HttpClient) {}
 
+  ngOnInit(): void {
+    this.fetchTeams('English Premier League');
+  }
+
   fetchTeams(leagueName: string) {
     this.http.get<any[]>(`http://localhost:3000/api/leagues/${encodeURIComponent(leagueName)}`)
       .subscribe(teams => this.teams = teams);
